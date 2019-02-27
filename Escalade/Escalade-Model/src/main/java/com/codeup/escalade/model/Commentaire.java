@@ -23,8 +23,21 @@ public class Commentaire {
         this.UserName = UserName;
         this.texte = texte;
     }
-    
-    public String getCommentaire() {
-        return "Commentaire de " + UserName + " : \n"+ "texte : " + texte;  
+
+    public String getUserName() {
+        return UserName;
     }
+
+    public void setUserName(String UserName) {
+        this.UserName = UserName;
+    }
+
+    public String getTexte() {
+        return texte;
+    }
+
+    public void setTexte(String texte) {
+        this.texte = texte;
+    }
+   
 }

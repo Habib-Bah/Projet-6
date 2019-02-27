@@ -19,6 +19,7 @@ public class Site {
     private int nombreDeSpits;
     public ArrayList<Commentaire> commentaires = new ArrayList<>();
     private String localisation;
+    public ArrayList<Voie> voies = new ArrayList<>();
     
     public Site() {
         super();
@@ -66,5 +67,21 @@ public class Site {
     
     public String getLocalisation() {
         return localisation;
+    }
+    
+    public Adresse getAdresse(int numero, String nom, String ville, int codePostal) {  
+        return new Adresse(numero, nom, ville, codePostal);
+    }
+    
+    public void addComment(String userName, String texte) {
+        
+        Commentaire commentaire = new Commentaire (userName, texte);
+        commentaires.add(commentaire);
+    }
+    
+    public void addVoie(String nomSite, String nomVoie, double longueur, String cotation) {
+        
+       Voie voie = new Voie(nomSite, nomVoie, longueur, cotation);
+       voies.add(voie);
     }
 }
