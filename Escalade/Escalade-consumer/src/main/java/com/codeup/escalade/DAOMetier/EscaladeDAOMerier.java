@@ -15,8 +15,8 @@ import java.util.*;
 public interface EscaladeDAOMerier {
     
     public void ajouterTopo(Topos t);
-    public void supprimerTopà(Topos t);
-    public Topos afficherTopo(Topos t);
+    public void supprimerTopo(Topos t);
+    public List<Topos> afficherTopo();
     public List <Topos> afficherTopoParPays(String pays);
 
 }

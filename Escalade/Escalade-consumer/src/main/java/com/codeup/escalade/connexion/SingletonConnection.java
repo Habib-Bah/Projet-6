@@ -6,6 +6,8 @@
 package com.codeup.escalade.connexion;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,4 +16,19 @@ import java.sql.*;
 public class SingletonConnection {
    private static Connection connection;
    
+   static {
+       try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres");
+        } catch (ClassNotFoundException e) {
+
+        } catch (SQLException ex) {
+           Logger.getLogger(SingletonConnection.class.getName()).log(Level.SEVERE, null, ex);
+       }
+   }
+   
+   public static Connection getConnection() {
+       return connection;
+   }
+    
 }
