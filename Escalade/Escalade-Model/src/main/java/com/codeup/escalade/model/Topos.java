@@ -12,7 +12,7 @@ package com.codeup.escalade.model;
 public class Topos {
     
     private String nomSite;
-    private String secteur;
+    private int secteur;
     private int nombreDeVoies;
     private String hauteur;
     private String cotation;
@@ -22,7 +22,7 @@ public class Topos {
         super();
     }
     
-    public Topos(String nomSite, String secteur, int nombreDeVoies, String hauteur, String cotation, int nombreDePoints){
+    public Topos(String nomSite, int secteur, int nombreDeVoies, String hauteur, String cotation, int nombreDePoints){
         
         this.nomSite = nomSite;
         this.secteur = secteur;
@@ -40,11 +40,11 @@ public class Topos {
         return nomSite;
     }
     
-    public void setSecteur(String secteur) {
+    public void setSecteur(int secteur) {
         this.secteur = secteur;
     }
     
-    public String getSecteur() {
+    public int getSecteur() {
         return this.secteur;
     }
     
