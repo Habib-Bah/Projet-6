@@ -5,10 +5,13 @@
  */
 package com.codeup.escalade.connexion;
 
+import java.sql.*;
+
 /**
  *
  * @author habib
  */
-public class SingletonConnexion {
-    
+public class SingletonConnection {
+   private static Connection connection;
+   
 }
