@@ -56,19 +56,34 @@ public class EscaladeDAOImpl implements EscaladeDAOMerier {
            }
            ps.close();
        }catch(SQLException e) {
-           e.printStackTrace();
        }
        return listTopo;
     }
 
     @Override
-    public void supprimerTopo(Topos t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public List<Topos> afficherTopoParPays(String pays) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List <Topos> listTopo = new ArrayList<Topos>();
+       Connection conn = SingletonConnection.getConnection();
+       
+       try {
+           PreparedStatement ps = conn.prepareStatement("select * from topo where localisation like ?");
+           ps.setString(1, pays);
+           ResultSet rs = ps.executeQuery();
+           while(rs.next()) {
+               Topos topo = new Topos();
+               topo.setNomSite(rs.getString("nomsite"));
+               topo.setSecteur(rs.getInt("secteur"));
+               topo.setNombreDeVoies(rs.getInt("nombredevoie"));
+               topo.setHauteur(rs.getString("hauteur"));
+               topo.setCotation(rs.getString("cotation"));
+               topo.setNombreDePoints(rs.getInt("nombredepoint"));
+               
+               listTopo.add(topo);
+           }
+           ps.close();
+       }catch(SQLException e) {
+       }
+       return listTopo;
     }
     
 }

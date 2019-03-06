@@ -17,6 +17,7 @@ public class Topos {
     private String hauteur;
     private String cotation;
     private int nombreDePoints;
+    private String localisation;
     
     public Topos() {
         super();
@@ -79,4 +80,14 @@ public class Topos {
     public String getCotation() {
         return cotation;
     }
+
+    public String getLocalisation() {
+        return localisation;
+    }
+
+    public void setLocalisation(String localisation) {
+        this.localisation = localisation;
+    }
+    
+    
 }

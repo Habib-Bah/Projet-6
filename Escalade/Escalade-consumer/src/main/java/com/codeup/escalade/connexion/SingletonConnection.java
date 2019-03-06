@@ -18,7 +18,7 @@ public class SingletonConnection {
    
    static {
        try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres");
         } catch (ClassNotFoundException e) {
 
